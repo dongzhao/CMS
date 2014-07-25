@@ -4,11 +4,11 @@ import com.dzhao.simplecms.core.ObjectProperties;
 import com.dzhao.simplecms.core.annotation.CmsDocument;
 import com.dzhao.simplecms.core.annotation.CmsDocumentInfo;
 import com.dzhao.simplecms.core.enums.ObjectType;
-import com.dzhao.simplecms.core.server.SimpleCmsService;
+import com.dzhao.simplecms.core.server.CmsObjectService;
 
 import java.lang.reflect.Field;
 
-public class SimpleCmsServiceImpl implements SimpleCmsService {
+public class CmsObjectServiceImpl implements CmsObjectService {
 
     @Override
     public <T> T createDocument(T source) throws IllegalAccessException {

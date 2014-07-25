@@ -16,5 +16,6 @@
         <module>simplecms-server/simplecms-server-api</module>
         <module>simplecms-core/simplecms-core-api</module>
         <module>simplecms-core/simplecms-core-impl</module>
+        <module>simplecms-core/simplecms-core-model</module>
   </modules>
 </project>

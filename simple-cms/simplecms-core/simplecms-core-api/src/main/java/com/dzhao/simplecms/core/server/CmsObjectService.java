@@ -1,7 +1,7 @@
 package com.dzhao.simplecms.core.server;
 
 
-public interface SimpleCmsService {
+public interface CmsObjectService {
 
     <T> T createDocument(T source) throws IllegalAccessException;
 

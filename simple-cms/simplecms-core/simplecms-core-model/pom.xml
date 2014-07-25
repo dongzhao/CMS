@@ -9,22 +9,10 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
+
   <groupId>com.dzhao.simplecms.core</groupId>
-  <artifactId>simplecms-core-impl</artifactId>
+  <artifactId>simplecms-core-model</artifactId>
   <packaging>jar</packaging>
-  <name>simplecms-core-impl</name>
-
-    <properties>
-        <parentBasedir>../../</parentBasedir>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.dzhao.simplecms.core</groupId>
-            <artifactId>simplecms-core-api</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+  <name>simplecms-core-model</name>
 
 </project>

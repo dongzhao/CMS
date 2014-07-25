@@ -1,0 +1,1 @@
+mvn archetype:create -DgroupId=com.dzhao.simple.opencms.server -DartifactId=simple-opencms-server-api
