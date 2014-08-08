@@ -5,3 +5,6 @@ simple-cms/simplecms-core/simplecms-core-api/simplecms-core-api.iml
 simple-cms/simplecms-core/simplecms-core-impl/simplecms-core-impl.iml
 simple-cms/simplecms-server/simplecms-server-api/simple-opencms-server-api.iml
 
+*.class
+*.bat
+*.iml
