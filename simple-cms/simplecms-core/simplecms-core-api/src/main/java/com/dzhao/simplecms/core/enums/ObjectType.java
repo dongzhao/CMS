@@ -2,7 +2,7 @@ package com.dzhao.simplecms.core.enums;
 
 public enum ObjectType {
 
-    CMS_DOCUMENT("cms:document"),
+    CMS_FILE("cms:file"),
     CMS_FOLDER("cms:folder") ;
 
     private final String value;

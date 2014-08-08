@@ -9,7 +9,7 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.dzhao.simplecms.core</groupId>
+  <groupId>com.dzhao.simplecms.core</groupId>
   <artifactId>simplecms-core-api</artifactId>
   <packaging>jar</packaging>
   <name>simplecms-core-api</name>

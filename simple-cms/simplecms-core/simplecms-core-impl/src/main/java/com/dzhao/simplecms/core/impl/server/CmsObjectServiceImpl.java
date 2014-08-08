@@ -35,7 +35,7 @@ public class CmsObjectServiceImpl implements CmsObjectService {
                 if(field.get(source)==null || !Boolean.valueOf(String.valueOf(field.get(source)))){
                     document = false;
                 }
-                objectInfo.setObjectType(document? ObjectType.CMS_DOCUMENT : ObjectType.CMS_FOLDER);
+                objectInfo.setObjectType(document? ObjectType.CMS_FILE : ObjectType.CMS_FOLDER);
             }else if(name.equals(ObjectProperties.PATH)){
                 objectInfo.setPath(String.valueOf(field.get(source)));
             }else if(name.equals(ObjectProperties.PARENT_PATH)){

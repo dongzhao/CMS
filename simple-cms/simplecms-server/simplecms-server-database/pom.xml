@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dzhao.simplecms</groupId>
+        <artifactId>simple-cms</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+  <groupId>com.dzhao.simplecms.server</groupId>
+  <artifactId>simplecms-server-database</artifactId>
+  <packaging>jar</packaging>
+  <name>simplecms-server-database</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+      <dependency>
+          <groupId>com.dzhao.simplecms.server</groupId>
+          <artifactId>simplecms-server-api</artifactId>
+          <version>${project.version}</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>com.dzhao.simplecms.core</groupId>
+          <artifactId>simplecms-core-api</artifactId>
+          <version>${project.version}</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- for model annotation -->
+      <dependency>
+          <groupId>org.hibernate.javax.persistence</groupId>
+          <artifactId>hibernate-jpa-2.1-api</artifactId>
+          <version>1.0.0.Final</version>
+          <!--<version>${hibernate.jpa.api.version}</version>-->
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <!--<version>${hibernate.version}</version>-->
+          <version>4.3.6.Final</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>5.1.2.Final</version>
+      </dependency>
+
+  </dependencies>
+</project>
