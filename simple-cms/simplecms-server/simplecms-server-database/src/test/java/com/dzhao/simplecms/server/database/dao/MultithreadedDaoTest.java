@@ -23,7 +23,7 @@ public class MultithreadedDaoTest extends JpaDaoTest{
         CountDownLatch start = new CountDownLatch(1);
         CountDownLatch finished = new CountDownLatch(defaultClients);
         for (int i = 0; i<defaultClients; i++){
-            executor.execute(new DaoSaveRunner<DbFolder, String>(dbFolderDao, newFolder("thread" + String.valueOf(i)), start, finished));
+            executor.execute(new DaoSaveRunner<DbFolder, String>(dbFolderDao, newFolder(), start, finished));
         }
         start.countDown();
         finished.await(60, TimeUnit.SECONDS);
@@ -37,12 +37,18 @@ public class MultithreadedDaoTest extends JpaDaoTest{
 
     @Test
     public void can_update_multithreaded() throws InterruptedException {
+
+        DbFolder newFolder = newFolder();
+        dbFolderDao.save(newFolder);
+        String testId = newFolder.getId();
+        Assert.assertNotNull(dbFolderDao.get(testId));
+
         ThreadPoolExecutor executor = new ThreadPoolExecutor(defaultPoolSize, defaultPoolSize,0,
                 TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10));
         CountDownLatch start = new CountDownLatch(1);
         CountDownLatch finished = new CountDownLatch(defaultClients);
         for (int i = 0; i<defaultClients; i++){
-            executor.execute(new DaoSaveRunner<DbFolder, String>(dbFolderDao, newFolder("thread"), start, finished));
+            executor.execute(new DaoSaveRunner<DbFolder, String>(dbFolderDao, updFolder(testId, String.valueOf(i)), start, finished));
         }
         start.countDown();
         finished.await(60, TimeUnit.SECONDS);
@@ -51,9 +57,8 @@ public class MultithreadedDaoTest extends JpaDaoTest{
         Assert.assertNotNull(dbFolderDao.get("thread"));
     }
 
-    private DbFolder newFolder(String id){
+    private DbFolder newFolder(){
         DbFolder domain = new DbFolder();
-        domain.setId(id);
         domain.setCreatedBy(testUser);
         domain.setCreationDate(testDate);
         domain.setDescription(testDescription);
@@ -62,6 +67,12 @@ public class MultithreadedDaoTest extends JpaDaoTest{
         domain.setLastModificationDate(testDate);
         domain.setLastModifiedBy(testUser);
         domain.setTitle(testTitle);
+        return domain;
+    }
+
+    private DbFolder updFolder(String id, String title){
+        DbFolder domain = dbFolderDao.get(id);
+        domain.setTitle(domain.getTitle() + "-" + title);
         return domain;
     }
 }

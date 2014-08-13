@@ -1,6 +1,7 @@
 package com.dzhao.simplecms.server.database.model;
 
 
+import com.dzhao.simplecms.server.database.model.util.IdGenerator;
 import com.dzhao.simplecms.server.model.BaseDomain;
 
 import javax.persistence.*;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @MappedSuperclass
 public abstract class AbstractDbDomain implements BaseDomain<String> {
     @Id
-    protected String id;
+    protected String id = IdGenerator.generateId();
 
     @Version
     protected Long version;
@@ -17,9 +18,9 @@ public abstract class AbstractDbDomain implements BaseDomain<String> {
         return id;
     }
 
-    public void setId(String id) {
+/*    public void setId(String id) {
         this.id = id;
-    }
+    }*/
 
     protected Long getVersion() {
         return version;

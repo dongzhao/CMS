@@ -14,7 +14,6 @@ public class DbFilePersistenceTest extends PersistenceTest<DbFile, String>{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
         DbFile domain = new DbFile();
-        domain.setId(testId);
         domain.setCreatedBy(testUser);
         domain.setCreationDate(testDate);
         domain.setDescription(testDescription);
@@ -29,7 +28,7 @@ public class DbFilePersistenceTest extends PersistenceTest<DbFile, String>{
 
         save(domain);
 
-        DbFile actrual = get(testId);
+        DbFile actrual = get(domain.getId());
         Assert.assertNotNull(actrual);
 
         Assert.assertEquals("incorrect Name",testName, actrual.getName());

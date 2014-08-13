@@ -13,7 +13,6 @@ public class DbFolderDaoTest extends JpaDaoTest{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
         DbFolder domain = new DbFolder();
-        domain.setId(testId);
         domain.setCreatedBy(testUser);
         domain.setCreationDate(testDate);
         domain.setDescription(testDescription);
@@ -25,7 +24,7 @@ public class DbFolderDaoTest extends JpaDaoTest{
 
         dbFolderDao.save(domain);
 
-        DbFolder actrual = dbFolderDao.get(testId);
+        DbFolder actrual = dbFolderDao.get(domain.getId());
 
         Assert.assertNotNull(actrual);
 

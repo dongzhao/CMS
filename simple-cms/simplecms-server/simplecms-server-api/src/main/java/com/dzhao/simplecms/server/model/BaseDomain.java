@@ -6,6 +6,6 @@ public interface BaseDomain<ID extends Serializable> extends Serializable{
 
     ID getId();
 
-    void setId(ID id);
+    //void setId(ID id);
 
 }

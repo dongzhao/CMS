@@ -14,7 +14,6 @@ public class DbFileDaoTest extends JpaDaoTest{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
         DbFile domain = new DbFile();
-        domain.setId(testId);
         domain.setCreatedBy(testUser);
         domain.setCreationDate(testDate);
         domain.setDescription(testDescription);
@@ -29,7 +28,7 @@ public class DbFileDaoTest extends JpaDaoTest{
 
         dbFileDao.save(domain);
 
-        DbFile actrual = dbFileDao.get(testId);
+        DbFile actrual = dbFileDao.get(domain.getId());
 
         Assert.assertNotNull(actrual);
 

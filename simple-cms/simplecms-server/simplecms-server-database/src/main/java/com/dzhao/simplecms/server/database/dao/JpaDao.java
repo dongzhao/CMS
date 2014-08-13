@@ -9,7 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.io.Serializable;
+import java.util.List;
 /*import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;*/
 
@@ -64,7 +66,31 @@ public class JpaDao<T extends BaseDomain<ID>, ID extends Serializable> implement
 
     @Override
     public T get(ID id) {
-        return entityManagerProvider.get().find(clazz, id);
+        EntityManager em = entityManagerProvider.get();
+        T entity = null;
+        try{
+            entity = entityManagerProvider.get().find(clazz, id);
+        }finally {
+            if (em.getTransaction().isActive())
+                em.getTransaction().rollback();
+            em.close();
+        }
+        return entity;
+    }
+
+    @SuppressWarnings("JpaQlInspection")
+    public List<T> getAll(){
+        EntityManager em = entityManagerProvider.get();
+        List<T> results = null;
+        try{
+            Query query = em.createQuery("select e from " + clazz.getName() + " e");
+            results = (List<T>)query.getResultList();
+        }finally {
+            if (em.getTransaction().isActive())
+                em.getTransaction().rollback();
+            em.close();
+        }
+        return results;
     }
 
     @Override

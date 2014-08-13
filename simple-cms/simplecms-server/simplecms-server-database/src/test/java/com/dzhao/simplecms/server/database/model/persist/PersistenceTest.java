@@ -22,7 +22,6 @@ public abstract class PersistenceTest<T extends BaseDomain<ID>, ID extends Seria
     protected static EntityManagerFactory emf;
     protected Class<T> clazz;
 
-    protected String testId = "file-12345";
     protected String testName = "test";
     protected String testFolderPath = "/test folder";
     protected String testUser = "testuser01";

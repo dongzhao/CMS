@@ -15,7 +15,6 @@ public class DbFolderPersistenceTest extends PersistenceTest<DbFolder, String>{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
         DbFolder domain = new DbFolder();
-        domain.setId(testId);
         domain.setCreatedBy(testUser);
         domain.setCreationDate(testDate);
         domain.setDescription(testDescription);
@@ -27,7 +26,7 @@ public class DbFolderPersistenceTest extends PersistenceTest<DbFolder, String>{
 
         save(domain);
 
-        DbFolder actrual = get(testId);
+        DbFolder actrual = get(domain.getId());
         Assert.assertNotNull(actrual);
 
         Assert.assertEquals("incorrect Name",testName, actrual.getName());

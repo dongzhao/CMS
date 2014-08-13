@@ -19,7 +19,6 @@ public abstract class JpaDaoTest{
     protected Dao<DbFile, String> dbFileDao;
     protected Dao<DbFileContent, String> dbFileContentDao;
 
-    protected String testId = "file-12345";
     protected String testName = "test";
     protected String testFolderPath = "/test folder";
     protected String testUser = "testuser01";

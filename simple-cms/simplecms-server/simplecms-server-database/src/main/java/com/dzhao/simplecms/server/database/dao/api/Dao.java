@@ -3,6 +3,7 @@ package com.dzhao.simplecms.server.database.dao.api;
 import com.dzhao.simplecms.server.model.BaseDomain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public interface Dao<T extends BaseDomain<ID>, ID extends Serializable> {
     /**
@@ -22,6 +23,11 @@ public interface Dao<T extends BaseDomain<ID>, ID extends Serializable> {
      */
     T get(ID id);
 
+    /**
+     *
+     * @return
+     */
+    List<T> getAll();
     /**
      * Save changes made to a persistent object.
      * @param entity
