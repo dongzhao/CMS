@@ -14,24 +14,32 @@
   <packaging>jar</packaging>
   <name>simplecms-server-database</name>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <parentBasedir>../../</parentBasedir>
+    </properties>
+
 
   <dependencies>
-      <dependency>
+<!--      <dependency>
           <groupId>com.dzhao.simplecms.server</groupId>
           <artifactId>simplecms-server-api</artifactId>
           <version>${project.version}</version>
           <scope>provided</scope>
-      </dependency>
+      </dependency>-->
 
       <dependency>
+          <groupId>com.dzhao.simplecms.server</groupId>
+          <artifactId>simplecms-server-repository</artifactId>
+          <version>${project.version}</version>
+<!--          <scope>provided</scope>-->
+      </dependency>
+
+<!--      <dependency>
           <groupId>com.dzhao.simplecms.core</groupId>
           <artifactId>simplecms-core-api</artifactId>
           <version>${project.version}</version>
           <scope>provided</scope>
-      </dependency>
+      </dependency>-->
 
       <!-- for model annotation -->
       <dependency>

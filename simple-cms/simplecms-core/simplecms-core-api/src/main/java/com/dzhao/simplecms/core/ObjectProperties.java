@@ -31,7 +31,11 @@ public final class ObjectProperties {
 
     public static final String CONTENT_MIME_TYPE = "cms:contentMimeType";
 
-    public static final String CONTENT_FILE_NAME = "cms:contentFileName";
+    public static final String CONTENT_STREAM = "cms:contentStream";
+
+    //public static final String CONTENT_FILE_NAME = "cms:contentFileName";
 
     public static final String OBJECT_CONTENT_ID = "cms:objectContentId";
+
+    public static final String METADATA = "cms:metadata";
 }
